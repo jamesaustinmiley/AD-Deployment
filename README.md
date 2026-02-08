@@ -85,5 +85,48 @@ In the dc-1 vm start menu, click on Active Directory Users and Computers. Create
 <br />
 
 <p>
-
+Log into the Client-1 Virtual Machine via Remote Desktop as the original local admin (labuser) and finish the process of joining Client-1 to the domain (mydomain.com by going to Settings, System, About, and Device Specifications. Log in to dc-1 and verify that client-1 appears within Active Directory Users and Computers. Create a new organizational unit named _CLIENTS and move client-1 into it. Log back into client-1 as mydomain.com\jane_admin. In the Start menu, go to System and then Remote Desktop. Adding Domain Users to the Remote Desktop will allow all members of the domain, including non-administrative, to be able to log in to client-1. 
+</p>
+<p>
+<img src="https://imgur.com/teS2JGP.png" alt="System Properties"/>
+</p>
+<p>
+<img src="https://imgur.com/5pv9Wzf.png" alt="Domain Change"/>
+</p>
+<p>
+<img src="https://imgur.com/pRjLF2M.png" alt="Permission"/>
+</p>
+<p>
+<img src="https://imgur.com/pxQsepU.png" alt="ADU Client-1"/>
+</p>
+<p>
+<img src="https://imgur.com/6YRvwTL.png" alt="CLIENTS"/>
+</p>
+<p>
+<img src="https://imgur.com/wcMqOdy.png" alt="Remote Desktop"/>
+</p>
+<p>
+<img src="https://imgur.com/TInJwiS.png" alt="Select Users or Groups"/>
+</p>
+<p>
+<img src="https://imgur.com/aNb00jl.png" alt="Remote Desktop Users"/>
+</p>
 <br />
+
+<p>
+Log into the dc-1 virtual machine as jane_admin. Type PowerShell in the search bar, right-click Windows PowerShell ISE and click Run as Administrator. Click on the Script down arrow to unveil a text box above PowerShell. Copy a script with code, save it as create-users on Desktop, and paste it in the text box above PowerShell where it can run and create new users to join the Active Directory. 
+</p>
+<p>
+<img src="https://imgur.com/BDD1FBx.png" alt="Powershell ISE"/>
+</p>
+<p>
+<img src="https://imgur.com/OJ1RR4a.png" alt="Raw Code"/>
+</p>
+<p>
+<img src="https://imgur.com/DXM7J2j.png" alt="New File"/>
+</p>
+<p>
+<img src="https://imgur.com/NZm98SR.png" alt="Run Script"/>
+</p>
+<p>
+<img src="
