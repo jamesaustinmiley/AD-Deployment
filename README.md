@@ -114,7 +114,7 @@ Log into the Client-1 Virtual Machine via Remote Desktop as the original local a
 <br />
 
 <p>
-Log into the dc-1 virtual machine as jane_admin. Type PowerShell in the search bar, right-click Windows PowerShell ISE and click Run as Administrator. Click on the Script down arrow to unveil a text box above PowerShell. Copy a script with code, save it as create-users on Desktop, and paste it in the text box above PowerShell where it can run and create new users to join the Active Directory. 
+Log into the dc-1 virtual machine as jane_admin. Type PowerShell in the search bar, right-click Windows PowerShell ISE and click Run as Administrator. Click on the Script down arrow to unveil a text box above PowerShell. Copy a script with code, save it as create-users on Desktop, and paste it in the text box above PowerShell where it can run and create new users to join the Active Directory. After running the script, open Active Directory Users and Computers and observe the new accounts that should be listed in the _EMPLOYEES organizational unit. You should be able to log in to the Client-1 VM as any of the new employees since they are all now members of the Domain Users which means they can use Remote Desktop. When logging in to Client-1 with one of the new employees, do so as mydomain.com\"employee name" (gig.foc) with Password1 as the password, which was part of the code used to create the new employees. 
 </p>
 <p>
 <img src="https://imgur.com/BDD1FBx.png" alt="Powershell ISE"/>
@@ -129,4 +129,8 @@ Log into the dc-1 virtual machine as jane_admin. Type PowerShell in the search b
 <img src="https://imgur.com/NZm98SR.png" alt="Run Script"/>
 </p>
 <p>
-<img src="
+<img src="https://imgur.com/ztlp3uP.png" alt="New Employees"/>
+</p>
+<p>
+<img src="https://imgur.com/Ogse8U3.png" alt="Employee Log in"/>
+</p>
