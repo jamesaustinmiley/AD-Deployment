@@ -3,7 +3,7 @@
 </p>
 
 <h1>Active Directory Deployment (Azure)</h1>
-This tutorial outlines the installation of Active Directory on your dc-1 virtual machine, the promotion of dc-1's server to a domain controller, the creation of a domain admin user, the joining of your client-1 virtual machine to the domain, modifying client-1 so that non-administrative users can log in, and the creation of these additional users. Active Directory is Microsoft software that is designed for the management of user accounts and their associated properties, such as passwords and permissions, on a large, centralized scale. <br />
+This tutorial outlines the installation of Active Directory on your dc-1 virtual machine, the promotion of dc-1's server to a domain controller, the creation of a domain admin user, the joining of your client-1 virtual machine to the domain, modifying client-1 so that non-administrative users can log in, and the creation of these additional users. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. <br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -21,7 +21,7 @@ This tutorial outlines the installation of Active Directory on your dc-1 virtual
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-Log in to the Dc-1 Virtual Machine via Remote Desktop using its Public IP Address. In the Start menu, click on Server Manager and then Add Roles and Features. Install Active Directory Domain Services on this server. Next, promote the Windows Server on the Dc-1 VM to a Domain Controller. From now on whenever you log into DC-1, instead of just typing the user name (labuser) you must type mydomain.com\user name (mydomain.com\labuser). 
+Log in to the Dc-1 Virtual Machine via Remote Desktop using its Public IP Address. In the Start menu, click on Server Manager and then Add Roles and Features. Install Active Directory Domain Services on this server. Next, promote the Windows Server on the Dc-1 VM to a Domain Controller. From now on, whenever you log into DC-1, instead of just typing the username (labuser), you must type mydomain.com\username (mydomain.com\labuser). 
 </p>
 <p> 
 <img src="https://imgur.com/mv6IIdD.png" alt="Add Roles and Features"/>
@@ -47,7 +47,7 @@ Log in to the Dc-1 Virtual Machine via Remote Desktop using its Public IP Addres
 <br />
 
 <p>
-In the dc-1 vm start menu, click on Active Directory Users and Computers. Create two organizational units ( _EMPLOYEES and _ADMINS). Create a Domain Admin user by adding a new employee (Jane Doe) to the _ADMINS folder which will make the employee a member of Domain Users. Right-click the employee and click Properties to add the employee to Domain Admins. As a Domain Admin user, this employee will have near-total control over the entire domain and its associated user accounts. 
+In the DC-1 VM start menu, click on Active Directory Users and Computers. Create two organizational units ( _EMPLOYEES and _ADMINS). Create a Domain Admin user by adding a new employee (Jane Doe) to the _ADMINS folder, which will make the employee a member of Domain Users. Right-click the employee and click Properties to add the employee to Domain Admins. As a Domain Admin, this employee will have near-total control over the domain and its associated user accounts.
 </p>
 <p>
 <img src="https://imgur.com/P7PVclQ.png" alt="ADUC"/>
@@ -85,7 +85,7 @@ In the dc-1 vm start menu, click on Active Directory Users and Computers. Create
 <br />
 
 <p>
-Log into the Client-1 Virtual Machine via Remote Desktop as the original local admin (labuser) and finish the process of joining Client-1 to the domain (mydomain.com by going to Settings, System, About, and Device Specifications. Log in to dc-1 and verify that client-1 appears within Active Directory Users and Computers. Create a new organizational unit named _CLIENTS and move client-1 into it. Log back into client-1 as mydomain.com\jane_admin. In the Start menu, go to System and then Remote Desktop. Adding Domain Users to the Remote Desktop will allow all members of the domain, including non-administrative, to be able to log in to client-1. 
+Log into the Client-1 Virtual Machine via Remote Desktop as the original local admin (labuser) and finish the process of joining Client-1 to the domain (mydomain.com by going to Settings, System, About, and Device Specifications. Log in to dc-1 and verify that client-1 appears within Active Directory Users and Computers. Create a new organizational unit named _CLIENTS and move client-1 into it. Log back into client-1 as mydomain.com\jane_admin. In the Start menu, go to System and then Remote Desktop. Adding Domain Users to the Remote Desktop will allow all domain members, including non-administrative users, to log in to client-1.
 </p>
 <p>
 <img src="https://imgur.com/teS2JGP.png" alt="System Properties"/>
@@ -114,7 +114,7 @@ Log into the Client-1 Virtual Machine via Remote Desktop as the original local a
 <br />
 
 <p>
-Log into the dc-1 virtual machine as jane_admin. Type PowerShell in the search bar, right-click Windows PowerShell ISE and click Run as Administrator. Click on the Script down arrow to unveil a text box above PowerShell. Copy a script with code, save it as create-users on Desktop, and paste it in the text box above PowerShell where it can run and create new users to join the Active Directory. After running the script, open Active Directory Users and Computers and observe the new accounts that should be listed in the _EMPLOYEES organizational unit. You should be able to log in to the Client-1 VM as any of the new employees since they are all now members of the Domain Users which means they can use Remote Desktop. When logging in to Client-1 with one of the new employees, do so as mydomain.com\"employee name" (gig.foc) with Password1 as the password, which was part of the code used to create the new employees. 
+Log in to the DC-1 virtual machine as jane_admin. Type PowerShell in the search bar, right-click Windows PowerShell ISE, and click Run as Administrator. Click on the Script down arrow to unveil a text box above PowerShell. Copy a script with code, save it as create-users on the Desktop, and paste it in the text box above PowerShell, where it can run and create new users to join the Active Directory. After running the script, open Active Directory Users and Computers and observe the new accounts that should be listed in the _EMPLOYEES organizational unit. You should be able to log in to the Client-1 VM as any of the new employees, since they are now members of the Domain Users group, which means they can use Remote Desktop. When logging in to Client-1 with one of the new employees, do so as mydomain.com\"employee name" (gig.foc) with Password1 as the password, which was part of the code used to create the new employees. 
 </p>
 <p>
 <img src="https://imgur.com/BDD1FBx.png" alt="Powershell ISE"/>
