@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>Active Directory Deployment (Azure)</h1>
+<h1>Active Directory Deployment</h1>
 This tutorial outlines the installation of Active Directory on your dc-1 virtual machine, the promotion of dc-1's server to a domain controller, the creation of a domain admin user, the joining of your client-1 virtual machine to the domain, modifying client-1 so that non-administrative users can log in, and the creation of these additional users. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. <br />
 
 
