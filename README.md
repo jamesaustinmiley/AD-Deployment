@@ -3,7 +3,7 @@
 </p>
 
 <h1>Active Directory Deployment</h1>
-This tutorial outlines the installation of Active Directory on your dc-1 virtual machine, the promotion of dc-1's server to a domain controller, the creation of a domain admin user, the joining of your client-1 virtual machine to the domain, modifying client-1 so that non-administrative users can log in, and the creation of these additional users. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. <br />
+This tutorial outlines the installation of Active Directory on your dc-1 Virtual Machine, the promotion of dc-1's server to a Domain Controller, the creation of a Domain Admin user, and the joining of your client-1 VM to the domain. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. <br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -18,7 +18,7 @@ This tutorial outlines the installation of Active Directory on your dc-1 virtual
 - Windows Server 2022
 - Windows 11 (25H2)
 
-<h2>Deployment and Configuration Steps</h2>
+<h2>Deployment Steps</h2>
 
 <p>
 Log in to the Dc-1 Virtual Machine via Remote Desktop using its Public IP Address. In the Start menu, click on Server Manager and then Add Roles and Features. Install Active Directory Domain Services on this server. Next, promote the Windows Server on the Dc-1 VM to a Domain Controller. From now on, whenever you log into DC-1, instead of just typing the username (labuser), you must type mydomain.com\username (mydomain.com\labuser). 
