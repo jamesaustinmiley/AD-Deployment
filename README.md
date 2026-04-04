@@ -10,8 +10,8 @@ This tutorial outlines the installation of Active Directory on your dc-1 Virtual
 
 - Microsoft Azure 
 - Remote Desktop
-- Active Directory Domain Services
-- PowerShell
+- Server Manager
+- Active Directory Domain Services 
 
 <h2>Operating Systems Used </h2>
 
@@ -21,42 +21,81 @@ This tutorial outlines the installation of Active Directory on your dc-1 Virtual
 <h2>Deployment Steps</h2>
 
 <p>
-Log in to the Dc-1 Virtual Machine via Remote Desktop using its Public IP Address. In the Start menu, click on Server Manager and then Add Roles and Features. Install Active Directory Domain Services on this server. Next, promote the Windows Server on the Dc-1 VM to a Domain Controller. From now on, whenever you log into DC-1, instead of just typing the username (labuser), you must type mydomain.com\username (mydomain.com\labuser). 
+Log in to the dc-1 Virtual Machine, via Remote Desktop, using its Public IP Address and login credentials. 
 </p>
 <p> 
-<img src="https://imgur.com/mv6IIdD.png" alt="Add Roles and Features"/>
+<img src="https://imgur.com/uMwwyZw.png" alt="dc-1"/>
 </p>
 <p>
-<img src="https://imgur.com/Ebrmbe6.png" alt="Active Directory Domain Services"/>
+Open Server Manager via the Start Menu search bar and click Add Roles and Features. 
 </p>
 <p>
-<img src="https://imgur.com/Wqe8KPc.png" alt="Confirmation"/>
+<img src="https://imgur.com/pAtvk97.png" alt="Server Manager"/>
 </p>
 <p>
-<img src="https://imgur.com/JTmmxZ0.png" alt="Promote Server"/>
+Proceed to Server Roles where you will install Active Directory Domain Services on the dc-1 server.  
 </p>
 <p>
-<img src="https://imgur.com/fQb7bco.png" alt="Root Domain"/>
+<img src="https://imgur.com/ZgutBSj.png" alt="Server Roles"/>
 </p>
 <p>
-<img src="https://imgur.com/83gZBLj.png" alt="Review Options"/>
+Click Active Directory Domain Services and then click Add Features. 
 </p>
 <p>
-<img src="https://imgur.com/0vrITxS.png" alt="Prerequisites Check"/>
+<img src="https://imgur.com/ioHsGnd.png" alt="Add Features"/>
+</p>
+<p>
+<img src="https://imgur.com/pePBVy9.png" alt="Active Directory Domain Services"/>
+</p>
+<p>
+Continue on to the Confirmation page to complete the installation. Check the prompt that will restart the destination server after installation. 
+</p>
+<p>
+<img src="https://imgur.com/fNFTOaE.png" alt="Confirmation"/>
+</p>
+<p>
+Once the server has restarted, open Server Manager where you will see AD DS on the Dashboard. 
+</p>
+<p>
+<img src="https://imgur.com/kOyTBVM.png" alt="Restart"/>
+</p>
+<p>
+Click on the flag with the yellow triangle at the top of the Server Manager screen and then click Promote this Server to a Domain Controller. 
+</p>
+<p>
+<img src="https://imgur.com/r3ca87B.png" alt="Flag"/>
+</p>
+<p>
+On the Deployment Configuration page, select Add a New Forest and type mydomain.com as the Root Domain Name. 
+</p>
+<p>
+<img src="https://imgur.com/ePOca05.png" alt="New Forest"/>
+</p>
+<p>
+On the Domain Controller Options page, enter a password that will be used for Remote Desktop access. 
+</p>
+<p>
+<img src="https://imgur.com/fkr0lom.png" alt="Domain Controller Options"/>
+</p>
+<p>
+On the DNS Options page, make sure that the Create DNS Delegation box is unchecked. Proceed to the final page for installation.
+</p>
+<p>
+<img src="https://imgur.com/Jqnz9L4.png" alt="DNS"/>
 </p>
 <br />
 
 <p>
-In the DC-1 VM start menu, click on Active Directory Users and Computers. Create two organizational units ( _EMPLOYEES and _ADMINS). Create a Domain Admin user by adding a new employee (Jane Doe) to the _ADMINS folder, which will make the employee a member of Domain Users. Right-click the employee and click Properties to add the employee to Domain Admins. As a Domain Admin, this employee will have near-total control over the domain and its associated user accounts.
+Restart and then log back into the dc-1 VM as mydomain.com\username.
 </p>
 <p>
-<img src="https://imgur.com/P7PVclQ.png" alt="ADUC"/>
+<img src="https://imgur.com/crhp9Er.png" alt="mydomain.com"/>
 </p>
 <p>
-<img src="https://imgur.com/v9pRPVk.png" alt="OU"/>
+
 </p>
 <p>
-<img src="https://imgur.com/nqJpuIB.png" alt="EMPLOYEES"/>
+<img src=".png" alt=""/>
 </p>
 <p>
 <img src="https://imgur.com/OUhMrbv.png" alt="ADMINS"/>
