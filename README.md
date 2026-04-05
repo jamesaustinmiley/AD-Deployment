@@ -156,52 +156,52 @@ Log out of dc-1 and log back into Remote Desktop as mydomain.com\jane_admin with
 <br />
 
 <p>
-
+Log in to the client-1 VM as the original local admin (labuser).
 </p>
 <p>
-<img src="https://imgur.com/teS2JGP.png" alt="System Properties"/>
+<img src="https://imgur.com/wvcinOB.png" alt="labuser"/>
 </p>
 <p>
-<img src="https://imgur.com/5pv9Wzf.png" alt="Domain Change"/>
+Open Settings. Click on System. Click on About. Click on Rename this PC. Click on Domain or Workgroup. 
 </p>
 <p>
-<img src="https://imgur.com/pRjLF2M.png" alt="Permission"/>
+<img src="https://imgur.com/yXEc2CW.png" alt="Rename this PC"/>
 </p>
 <p>
-<img src="https://imgur.com/pxQsepU.png" alt="ADU Client-1"/>
+<img src="https://imgur.com/KCTGa3O.png" alt="Domain or Workgroup"/>
 </p>
 <p>
-<img src="https://imgur.com/6YRvwTL.png" alt="CLIENTS"/>
+Under the Computer Name tab in System Properties, click Change, since we will be changing the client-1 domain. 
 </p>
 <p>
-<img src="https://imgur.com/wcMqOdy.png" alt="Remote Desktop"/>
+<img src="https://imgur.com/ATNEq18.png" alt="Change"/>
 </p>
 <p>
-<img src="https://imgur.com/TInJwiS.png" alt="Select Users or Groups"/>
+Click Domain and enter mydomain.com as the domain that client-1 will be joining. Grant mydomain.com\jane_admin permission to join. Now, the client-1 VM is a member of the mydomain.com domain. 
 </p>
 <p>
-<img src="https://imgur.com/aNb00jl.png" alt="Remote Desktop Users"/>
+<img src="https://imgur.com/bmtZElH.png" alt="Domain Changes"/>
+</p>
+<p>
+<img src="https://imgur.com/3Xu1kmR.png" alt="Permission"/>
 </p>
 <br />
 
 <p>
-Log in to the DC-1 virtual machine as jane_admin. Type PowerShell in the search bar, right-click Windows PowerShell ISE, and click Run as Administrator. Click on the Script down arrow to unveil a text box above PowerShell. Copy a script with code, save it as create-users on the Desktop, and paste it in the text box above PowerShell, where it can run and create new users to join the Active Directory. After running the script, open Active Directory Users and Computers and observe the new accounts that should be listed in the _EMPLOYEES organizational unit. You should be able to log in to the Client-1 VM as any of the new employees, since they are now members of the Domain Users group, which means they can use Remote Desktop. When logging in to Client-1 with one of the new employees, do so as mydomain.com\"employee name" (gig.foc) with Password1 as the password, which was part of the code used to create the new employees. 
+Back in the dc-1 VM (the Domain Controller), open Active Directory Users and Computers. Click mydomain.com and open the Computers folder to verify that the client-1 VM has joined the domain. 
 </p>
 <p>
-<img src="https://imgur.com/BDD1FBx.png" alt="Powershell ISE"/>
+<img src="https://imgur.com/JlKWGzi.png" alt="Computers"/>
 </p>
 <p>
-<img src="https://imgur.com/OJ1RR4a.png" alt="Raw Code"/>
+Right-click mydomain.com and create a new Organizational Unit named _CLIENTS. Drag the client-1 VM from Computers to _CLIENTS. 
 </p>
 <p>
-<img src="https://imgur.com/DXM7J2j.png" alt="New File"/>
+<img src="https://imgur.com/eMLQqEs.png" alt="New OU"/>
 </p>
 <p>
-<img src="https://imgur.com/NZm98SR.png" alt="Run Script"/>
+<img src="https://imgur.com/ywPbrR1.png" alt="CLIENTS"/>
 </p>
 <p>
-<img src="https://imgur.com/ztlp3uP.png" alt="New Employees"/>
-</p>
-<p>
-<img src="https://imgur.com/Ogse8U3.png" alt="Employee Log in"/>
+<img src="https://imgur.com/MEdyfcw.png" alt="Drag"/>
 </p>
