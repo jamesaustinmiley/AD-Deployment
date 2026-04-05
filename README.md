@@ -11,7 +11,9 @@ This tutorial outlines the installation of Active Directory on your dc-1 Virtual
 - Microsoft Azure 
 - Remote Desktop
 - Server Manager
-- Active Directory Domain Services 
+- Active Directory Domain Services
+- Windows Administrative Tools
+- Active Directory Users and Computers 
 
 <h2>Operating Systems Used </h2>
 
@@ -86,45 +88,75 @@ On the DNS Options page, make sure that the Create DNS Delegation box is uncheck
 <br />
 
 <p>
-Restart and then log back into the dc-1 VM as mydomain.com\username.
+Restart and then log back into the dc-1 VM as mydomain.com\labuser.
 </p>
 <p>
 <img src="https://imgur.com/crhp9Er.png" alt="mydomain.com"/>
 </p>
 <p>
-
+Open Windows Administrative Tools, via the Start Menu search bar, and open Active Directory Users and Computers. 
 </p>
 <p>
-<img src=".png" alt=""/>
+<img src="https://imgur.com/aLTtzaJ.png" alt="Windows Administrative Tools"/>
 </p>
 <p>
-<img src="https://imgur.com/OUhMrbv.png" alt="ADMINS"/>
+Right-click mydomain.com and create two New Organizational Units named _EMPLOYEES and _ADMINS.
 </p>
 <p>
-<img src="https://imgur.com/B5xS1gY.png" alt="ADU2"/>
+<img src="https://imgur.com/sK9DHlK.png" alt="New Organizational Units"/>
 </p>
 <p>
-<img src="https://imgur.com/Gf9Zljp.png" alt="User"/>
+<img src="https://imgur.com/Io4Dwsg.png" alt="EMPLOYEES"/>
 </p>
 <p>
-<img src="https://imgur.com/x6bJKgW.png" alt="Jane Doe"/>
+<img src="https://imgur.com/qzNtPVQ.png" alt="ADMINS"/>
 </p>
 <p>
-<img src="https://imgur.com/Yqu5OZP.png" alt="Finish"/>
+Right-click the ADMINS folder to create a New User who will be a member of the ADMINS OU. 
 </p>
 <p>
-<img src="https://imgur.com/WTePDoa.png" alt="Properties"/>
+<img src="https://imgur.com/TTPlKor.png" alt="New User"/>
 </p>
 <p>
-<img src="https://imgur.com/Gm09bOS.png" alt="Domain Admins"/>
+Create login credentials for the New User (Jane Doe). 
 </p>
 <p>
-<img src="https://imgur.com/ffepkoQ.png" alt="Properties 2"/>
+<img src="https://imgur.com/t4k29cL.png" alt="Jane Doe User logon"/>
+</p>
+<p>
+<img src="https://imgur.com/Ufvj3Sx.png" alt="Jane Doe Password"/>
+</p>
+<p>
+Right-click Jane's account and select Properties. 
+</p>
+<p>
+<img src="https://imgur.com/9I0NiMX.png" alt="Jane Doe Properties"/>
+</p>
+<p>
+Click the Members Of tab where you will see that Jane is a member of the Domain Users Group. Click Add to begin the process of adding Jane to another group. 
+</p>
+<p>
+<img src="https://imgur.com/gtsxGZ3.png" alt="Add"/>
+</p>
+<p>
+Type Domain Admins in the text box and OK to add Jane to the Domain Admins Group. Back in the Members of tab, click Add under the Member of box and OK at the bottom of the screen to complete the process. 
+</p>
+<p>
+<img src="https://imgur.com/NPA7wEJ.png" alt="Select Groups"/>
+</p>
+<p>
+<img src="https://imgur.com/im0VbId.png" alt="Domain Admins"/>
+</p>
+<p>
+Log out of dc-1 and log back into Remote Desktop as mydomain.com\jane_admin with whatever password you entered earlier. 
+</p>
+<p>
+<img src="https://imgur.com/O9H3Soc.png" alt="mydomain.com\jane_admin"/>
 </p>
 <br />
 
 <p>
-Log into the Client-1 Virtual Machine via Remote Desktop as the original local admin (labuser) and finish the process of joining Client-1 to the domain (mydomain.com by going to Settings, System, About, and Device Specifications. Log in to dc-1 and verify that client-1 appears within Active Directory Users and Computers. Create a new organizational unit named _CLIENTS and move client-1 into it. Log back into client-1 as mydomain.com\jane_admin. In the Start menu, go to System and then Remote Desktop. Adding Domain Users to the Remote Desktop will allow all domain members, including non-administrative users, to log in to client-1.
+
 </p>
 <p>
 <img src="https://imgur.com/teS2JGP.png" alt="System Properties"/>
