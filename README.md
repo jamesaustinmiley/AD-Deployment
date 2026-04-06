@@ -20,7 +20,7 @@ This tutorial outlines the installation of Active Directory on your dc-1 Virtual
 - Windows Server 2022
 - Windows 11 (25H2)
 
-<h2>Deployment Steps</h2>
+<h2>Steps</h2>
 
 <p>
 Log in to the dc-1 Virtual Machine, via Remote Desktop, using its Public IP Address and login credentials. 
