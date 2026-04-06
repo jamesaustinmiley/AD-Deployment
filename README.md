@@ -13,7 +13,8 @@ This tutorial outlines the installation of Active Directory on your dc-1 Virtual
 - Server Manager
 - Active Directory Domain Services
 - Windows Administrative Tools
-- Active Directory Users and Computers 
+- Active Directory Users and Computers
+- Windows Settings
 
 <h2>Operating Systems Used </h2>
 
