@@ -162,10 +162,7 @@ Log in to the client-1 VM as the original local admin (labuser).
 <img src="https://imgur.com/wvcinOB.png" alt="labuser"/>
 </p>
 <p>
-Open Settings. Click on System. Click on About. Click on Rename this PC. Click on Domain or Workgroup. 
-</p>
-<p>
-<img src="https://imgur.com/yXEc2CW.png" alt="Rename this PC"/>
+Open Settings. Click on System. Click on About. Click on Domain or Workgroup in Related Links to begin the process of changing the client-1 domain. 
 </p>
 <p>
 <img src="https://imgur.com/KCTGa3O.png" alt="Domain or Workgroup"/>
