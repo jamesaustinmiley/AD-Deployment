@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>Active Directory Deployment</h1>
+<h1>AD Deployment</h1>
 This tutorial outlines the installation of Active Directory on your dc-1 Virtual Machine, the promotion of dc-1's server to a Domain Controller, the creation of a Domain Admin user, and the joining of your client-1 VM to the domain. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. <br />
 
 
